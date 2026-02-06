@@ -13,6 +13,6 @@ COPY . /app
 WORKDIR /app
 
 # Example app run
-# next line added
-RUN ["chmod", "+x", "/entrypoint.sh"]
-CMD ./entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
